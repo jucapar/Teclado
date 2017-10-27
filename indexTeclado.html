@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+   <script src="js/teclado.js"></script>
+  <title>Teclado</title>
+</head>
+<body  onLoad="Inicializar()">
+  
+ <!--<input type="button" value="Inicializar" onClick="tecladoMayusculas()" id="Inicializar" name="Inicializar"/>-->
+	<div id="container">
+		<form id="calculadoras">
+			
+			<p>
+				<textarea id="visor" value="0" rows="10" cols="80" name="visor" readonly></textarea>
+			
+			</p>
+			
+			<p id="NumeroCaracteres">0</p>
+			
+			<p>
+				<input type="button" value="" onClick="escribirCaracter(Q.value)" id="Q" name="Q" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(W.value)" id="W" name="W" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(E.value)" id="E" name="E" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(R.value)" id="R" name="R" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(T.value)" id="T" name="T" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(Y.value)" id="Y" name="Y" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(U.value)" id="U" name="U" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(I.value)" id="I" name="I" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(O.value)" id="O" name="O" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(P.value)" id="P" name="P" class="caracter"/>
+				
+				
+			</p>
+			
+			<p>
+				<input type="button" value="" onClick="escribirCaracter(A.value)" id="A" name="A" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(S.value)" id="S" name="S" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(D.value)" id="D" name="D" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(F.value)" id="F" name="F" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(G.value)" id="G" name="G" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(H.value)" id="H" name="H" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(J.value)" id="J" name="J" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(K.value)" id="K" name="K" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(L.value)" id="L" name="L" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(Ñ.value)" id="Ñ" name="Ñ" class="caracter"/>
+			
+			</p>
+			
+			
+			<p>
+				<input type="button" value="SHIFT" onClick="" id="SHIFT" name="SHIFT"/>
+				<input type="button" value="" onClick="escribirCaracter(Z.value)" id="Z" name="Z" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(X.value)" id="X" name="X" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(C.value)" id="C" name="C" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(V.value)" id="V" name="V" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(B.value)" id="B" name="B" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(N.value)" id="N" name="N" class="caracter"/>
+				<input type="button" value="" onClick="escribirCaracter(M.value)" id="M" name="M" class="caracter"/>
+				<input type="button" value="Borrar" onClick="borrarCaracter()" id="Borrar" name="Borrar" />
+				
+				
+			</p>
+			
+			<p>
+				<input type="button" value="MAY" onClick="tecladoMayusculas()"  id="MAY" name="MAY"/>
+				<input type="button" value="?123"onClick="cambiarTeclado()"id="CambiarTeclado" name="CambiarTeclado" />
+				<input type="button" value="Micro" id="Micro"  name="Micro"/>
+				<input type="button" value=" " onClick="escribirCaracter(Espacio.value)" id="Espacio" name="Espacio"/>
+				<input type="button" value="." onClick="escribirCaracter(Punto.value)" id="Punto" name="Punto" />
+				<input type="button" value="Enter" onClick="saltoLinea()" id="Enter" name="Enter"/>
+			</p>
+			
+		
+		</form>
+	
+		
+	
+	</div>
+  
+		
+</body>
+</html>

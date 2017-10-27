@@ -1,0 +1,10 @@
+#container{
+	width:50%;
+	margin: 0 auto;
+	background-color:#42adf4;
+	text-align:center;
+	padding: 2%;
+}
+#espacio{
+	width:30px;
+}
