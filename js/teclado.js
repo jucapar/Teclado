@@ -72,7 +72,7 @@
 		}
 	}
 	
-	function asignarTeclado(){
+	function cambiarTeclado(){
 		
 		teclas = document.getElementsByClassName("caracter");
 		
