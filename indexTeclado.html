@@ -11,7 +11,7 @@
   
  <!--<input type="button" value="Inicializar" onClick="tecladoMayusculas()" id="Inicializar" name="Inicializar"/>-->
 	<div id="container">
-		<form id="calculadoras">
+		<form id="teclado">
 			
 			<p>
 				<textarea id="visor" value="0" rows="10" cols="80" name="visor" readonly></textarea>
@@ -51,7 +51,7 @@
 			
 			
 			<p>
-				<input type="button" value="SHIFT" onClick="" id="SHIFT" name="SHIFT"/>
+				<input type="button" value="SHIFT" onClick="primeraMayusculas()" id="SHIFT" name="SHIFT"/>
 				<input type="button" value="" onClick="escribirCaracter(Z.value)" id="Z" name="Z" class="caracter"/>
 				<input type="button" value="" onClick="escribirCaracter(X.value)" id="X" name="X" class="caracter"/>
 				<input type="button" value="" onClick="escribirCaracter(C.value)" id="C" name="C" class="caracter"/>
@@ -59,7 +59,7 @@
 				<input type="button" value="" onClick="escribirCaracter(B.value)" id="B" name="B" class="caracter"/>
 				<input type="button" value="" onClick="escribirCaracter(N.value)" id="N" name="N" class="caracter"/>
 				<input type="button" value="" onClick="escribirCaracter(M.value)" id="M" name="M" class="caracter"/>
-				<input type="button" value="Borrar" onClick="borrarCaracter()" id="Borrar" name="Borrar" />
+				<input type="button" value="Borrar" onClick="escribirCaracter(Borrar.value)" id="Borrar" name="Borrar" />
 				
 				
 			</p>
@@ -70,7 +70,7 @@
 				<input type="button" value="Micro" id="Micro"  name="Micro"/>
 				<input type="button" value=" " onClick="escribirCaracter(Espacio.value)" id="Espacio" name="Espacio"/>
 				<input type="button" value="." onClick="escribirCaracter(Punto.value)" id="Punto" name="Punto" />
-				<input type="button" value="Enter" onClick="saltoLinea()" id="Enter" name="Enter"/>
+				<input type="button" value="Enter" onClick="escribirCaracter(Enter.value)" id="Enter" name="Enter"/>
 			</p>
 			
 		

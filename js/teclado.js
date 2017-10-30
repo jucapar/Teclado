@@ -8,22 +8,63 @@
 */
 	var Teclado1=["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Ñ","Z","X","C","V","B","N","M"];
 	var Teclado2=["1","2","3","4","5","6","7","8","9","0","@","#","€","_","&","-","+","(",")","/","*","\"","\'",":",";","!","?"];
-	var estadoSHIFT = 1;
-	var estadoTeclado = 1;
+	var estadoSHIFT = true;
+	var estadoTeclado = true;
 	var caracter = '';
+	var teclaSHIFT = true;
+	
+	function visualizar(){
+		document.getElementById("visor").innerHTML = caracter;
+	}
 	function escribirCaracter(letra){
 		
-		caracter+= letra;
-		document.getElementById("visor").innerHTML = caracter;
-		verNumeroCaracteres();
+		switch(letra){
+			
+			case "Enter":
+				saltoLinea();
+				break;
+			case "Borrar":
+				borrarCaracter();
+				break;
+			case ".":
+				caracter+= letra;
+				visualizar();
+				verNumeroCaracteres();
+			case "SHIFT":
+				primeraMayusculas();
+				break;
+			default:
+				caracter+= letra;
+				visualizar();
+				verNumeroCaracteres();
+				if(teclaSHIFT){
+					tecladoMayusculas();
+					teclaSHIFT = false;
+				}
+				
+				break;
+		}
+	
 	}
 
 	function borrarCaracter(){
+		
 		if(caracter.length != 0){
+			borrado = caracter[caracter.length -1];
+			console.log(borrado);
 			caracter = caracter.substring(0,caracter.length -1);
-			document.getElementById("visor").innerHTML = caracter;
-			verNumeroCaracteres();	
+			visualizar();
+			verNumeroCaracteres();
+			if(borrado == "."){
+				tecladoMayusculas();
+				teclaSHIFT = false;
+			}
 		}
+		if(caracter.length == 0 || caracter[caracter.length -1] == "."){
+			primeraMayusculas();
+		}
+		
+		
 	}
 
 	function verNumeroCaracteres(){
@@ -33,7 +74,7 @@
 	
 	function saltoLinea(){
 		caracter+= "\n";
-		document.getElementById("visor").innerHTML = caracter;
+		visualizar();
 		verNumeroCaracteres();
 	}
 	
@@ -45,7 +86,7 @@
 			
 			letra = teclas[i].value;
 				
-			if(estadoSHIFT == 1){
+			if(estadoSHIFT){
 				teclas[i].value = letra.toLowerCase();
 			}
 			else{
@@ -54,11 +95,11 @@
 			
 		}
 		
-		if(estadoSHIFT == 1){
-			estadoSHIFT = 0;
+		if(estadoSHIFT){
+			estadoSHIFT = false;
 		}
 		else{
-			estadoSHIFT = 1;
+			estadoSHIFT = true;
 		}
 	}
 	
@@ -77,21 +118,27 @@
 		teclas = document.getElementsByClassName("caracter");
 		
 		for(let i = 0; i<teclas.length;i++){
-			if(estadoTeclado == 0){
-				teclas[i].value = Teclado1[i];
-			}
-			else{
+			if(estadoTeclado){
 				teclas[i].value = Teclado2[i];
 			}
+			else{
+				teclas[i].value = Teclado1[i];
+			}
 		}
 		
-		if(estadoTeclado == 1){
-			estadoTeclado = 0;
+		if(estadoTeclado){
+			estadoTeclado = false;
 		}
 		else{
-			estadoTeclado = 1;
+			estadoTeclado = true;
 		}
 		
+	}
+	function primeraMayusculas(){
+		teclaSHIFT = true;
+		if(!estadoSHIFT){
+			tecladoMayusculas();
+		}
 	}
 	
 	
