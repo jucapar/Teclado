@@ -2,7 +2,7 @@
 	Nombre del fichero: teclado.js
 	Autor:Juan Carlos Pastor Regueras
 	Fecha de creacion: 26/10/2017
-	Fecha de modificacion:27/10/2017
+	Fecha de modificacion:30/10/2017
 	
 	
 */
@@ -51,7 +51,6 @@
 		
 		if(caracter.length != 0){
 			borrado = caracter[caracter.length -1];
-			console.log(borrado);
 			caracter = caracter.substring(0,caracter.length -1);
 			visualizar();
 			verNumeroCaracteres();
@@ -109,7 +108,6 @@
 		
 		for(let i = 0; i<teclas.length;i++){
 			teclas[i].value = Teclado1[i];
-			
 		}
 	}
 	
@@ -123,6 +121,7 @@
 			}
 			else{
 				teclas[i].value = Teclado1[i];
+				primeraMayusculas();
 			}
 		}
 		
