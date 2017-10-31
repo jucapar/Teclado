@@ -81,25 +81,27 @@
 		
 		teclas = document.getElementsByClassName("caracter");
 	
-		for(let i = 0; i<teclas.length;i++){
+		if(estadoTeclado){
+			for(let i = 0; i<teclas.length;i++){
 			
-			letra = teclas[i].value;
-				
+				letra = teclas[i].value;
+				if(estadoSHIFT){
+					teclas[i].value = letra.toLowerCase();
+				}
+				else{
+					teclas[i].value = letra.toUpperCase();
+				}
+			
+			}
+			
 			if(estadoSHIFT){
-				teclas[i].value = letra.toLowerCase();
+				estadoSHIFT = false;
 			}
 			else{
-				teclas[i].value = letra.toUpperCase();
+				estadoSHIFT = true;
 			}
-			
 		}
-		
-		if(estadoSHIFT){
-			estadoSHIFT = false;
-		}
-		else{
-			estadoSHIFT = true;
-		}
+	
 	}
 	
 	
@@ -120,8 +122,7 @@
 				teclas[i].value = Teclado2[i];
 			}
 			else{
-				teclas[i].value = Teclado1[i];
-				primeraMayusculas();
+				Inicializar();
 			}
 		}
 		
