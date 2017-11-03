@@ -9,7 +9,7 @@
 	var Teclado1=["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Ñ","Z","X","C","V","B","N","M"];
 	var Teclado2=["1","2","3","4","5","6","7","8","9","0","@","#","€","_","&","-","+","(",")","/","*","\"","\'",":",";","!","?"];
 	var estadoSHIFT = true;
-	var estadoTeclado = true;
+	var estadoTeclado = false;
 	var caracter = '';
 	var teclaSHIFT = true;
 	
@@ -105,14 +105,6 @@
 	}
 	
 	
-	function Inicializar(){
-		teclas = document.getElementsByClassName("caracter");
-		
-		for(let i = 0; i<teclas.length;i++){
-			teclas[i].value = Teclado1[i];
-		}
-	}
-	
 	function cambiarTeclado(){
 		
 		teclas = document.getElementsByClassName("caracter");
@@ -122,7 +114,7 @@
 				teclas[i].value = Teclado2[i];
 			}
 			else{
-				Inicializar();
+				teclas[i].value = Teclado1[i];
 			}
 		}
 		
